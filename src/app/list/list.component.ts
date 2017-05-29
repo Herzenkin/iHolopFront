@@ -25,11 +25,11 @@ export class ListComponent implements OnInit {
   }
 
   add() {
-    // this.holops.push(this.newHolop);
+    this.holopService.save(this.newHolop);
     this.newHolop = new Holop();
   }
 
   delete(holop: Holop) {
-    // this.holops = this.holops.filter(h => h != holop);
+    this.holopService.delete(holop.id);
   }
 }

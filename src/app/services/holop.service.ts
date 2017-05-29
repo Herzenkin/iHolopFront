@@ -22,4 +22,23 @@ export class HolopService {
       .map((resp: Response) => resp.json().data)
       .subscribe((holops: Holop[]) => this.store.next(holops));
   }
+
+  save(holop: Holop) {
+    this.http.post(this.url, holop)
+      .map((resp: Response) => resp.json().data)
+      .subscribe((holop: Holop) => {
+        let holops: Holop[] = this.store.getValue();
+        holops.push(holop);
+        this.store.next(holops);
+      });
+  }
+
+  delete(id: number) {
+    this.http.delete(this.url + '/' + id)
+      .subscribe(() => {
+        let holops: Holop[] = this.store.getValue();
+        holops = holops.filter(h => h.id != id);
+        this.store.next(holops);
+      });
+  }
 }
