@@ -1,4 +1,8 @@
 <h1>
   {{title}}
 </h1>
-<app-list></app-list>
+<md-chip-list>
+  <md-chip routerLink="/">List</md-chip>
+  <md-chip routerLink="/about">About</md-chip>
+</md-chip-list>
+<router-outlet></router-outlet>
