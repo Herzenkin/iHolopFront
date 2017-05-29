@@ -31,6 +31,11 @@ export class ListComponent implements OnInit {
     this.newHolop = new Holop();
   }
 
+  add() {
+    this.holops.push(this.newHolop);
+    this.newHolop = new Holop();
+  }
+
   delete(holop: Holop) {
     this.holops = this.holops.filter(h => h != holop);
   }
