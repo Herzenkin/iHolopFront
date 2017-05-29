@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+
 import { Holop } from '../holop';
+import { HolopService } from '../services/holop.service';
 
 @Component({
   selector: 'app-list',
@@ -11,7 +14,9 @@ export class ListComponent implements OnInit {
   holops: Holop[];
   newHolop: Holop;
 
-  constructor() { }
+  constructor(
+    private holopService: HolopService
+  ) { }
 
   ngOnInit() {
     this.holops = [{

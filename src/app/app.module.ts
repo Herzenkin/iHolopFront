@@ -8,12 +8,15 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HolopComponent } from './holop/holop.component';
 import { ListComponent } from './list/list.component';
+import { CounterComponent } from './counter/counter.component';
+import { HolopService } from './services/holop.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HolopComponent,
-    ListComponent
+    ListComponent,
+    CounterComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,7 @@ import { ListComponent } from './list/list.component';
     MdCardModule,
     NoopAnimationsModule
   ],
-  providers: [],
+  providers: [HolopService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

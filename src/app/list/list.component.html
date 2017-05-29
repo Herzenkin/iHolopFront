@@ -11,5 +11,5 @@
   <input mdInput placeholder="Rent To:" [(ngModel)]="newHolop.rentFrom">
 </md-input-container>
 <button md-raised-button color="primary" (click)="add()">Add</button>
-
+<app-counter></app-counter>
 <app-holop *ngFor="let theholop of holops" [holop]="theholop" (deleteHolop)="delete(theholop)"></app-holop>
