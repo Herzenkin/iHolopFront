@@ -15,17 +15,17 @@ export class HolopService {
     private http: Http
   ) { }
 
-  private url: string = '/app/holops';
+  private url: string = 'http://localhost:8080/holops';
 
   getAll() {
     this.http.get(this.url)
-      .map((resp: Response) => resp.json().data)
+      .map((resp: Response) => resp.json()._embedded.holops)
       .subscribe((holops: Holop[]) => this.store.next(holops));
   }
 
   save(holop: Holop) {
     this.http.post(this.url, holop)
-      .map((resp: Response) => resp.json().data)
+      .map((resp: Response) => resp.json())
       .subscribe((holop: Holop) => {
         let holops: Holop[] = this.store.getValue();
         holops.push(holop);

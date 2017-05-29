@@ -29,7 +29,7 @@ import { AboutComponent } from './about/about.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryService),
+    // InMemoryWebApiModule.forRoot(InMemoryService),
     ROUTING,
     //Material Design modules below
     MdInputModule,
