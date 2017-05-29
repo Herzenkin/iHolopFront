@@ -11,7 +11,7 @@ import { HolopService } from '../services/holop.service';
 })
 export class ListComponent implements OnInit {
 
-  holops: Holop[];
+  holops: Observable<Holop[]>;
   newHolop: Holop;
 
   constructor(
@@ -19,29 +19,17 @@ export class ListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.holops = [{
-      id: 1,
-      name: 'Johnny',
-      master: 'Mr. Aaron',
-      rentFrom: '2015/10/15',
-      rentTo: '2018/10/16'
-    },
-    {
-      id: 2,
-      name: 'Sam',
-      master: 'Mr. Smith',
-      rentFrom: '2014/10/18',
-      rentTo: '2019/06/05'
-    }];
+    this.holops = this.holopService.changes;
+    this.holopService.getAll();
     this.newHolop = new Holop();
   }
 
   add() {
-    this.holops.push(this.newHolop);
+    // this.holops.push(this.newHolop);
     this.newHolop = new Holop();
   }
 
   delete(holop: Holop) {
-    this.holops = this.holops.filter(h => h != holop);
+    // this.holops = this.holops.filter(h => h != holop);
   }
 }
