@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Holop } from '../holop';
 
 @Component({
@@ -13,11 +13,10 @@ export class HolopComponent implements OnInit {
   ngOnInit() {
   }
 
-  holop: Holop = {
-    id: 1,
-    name: 'Johnny',
-    master: 'Mr. Aaron',
-    rentFrom: '2015/10/15',
-    rentTo: '2018/10/16'
-  };
+  @Input() holop: Holop;
+  @Output() deleteHolop: EventEmitter<any> = new EventEmitter();
+
+  delete() {
+    this.deleteHolop.emit();
+  }
 }

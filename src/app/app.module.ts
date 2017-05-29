@@ -7,11 +7,13 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HolopComponent } from './holop/holop.component';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HolopComponent
+    HolopComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
