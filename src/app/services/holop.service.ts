@@ -19,7 +19,7 @@ export class HolopService {
 
   getAll() {
     this.http.get(this.url)
-      .map((resp: Response) => resp.json())
+      .map((resp: Response) => resp.json().data)
       .subscribe((holops: Holop[]) => this.store.next(holops));
   }
 }

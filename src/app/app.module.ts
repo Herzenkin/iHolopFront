@@ -5,6 +5,9 @@ import { HttpModule } from '@angular/http';
 import { MdInputModule, MdChipsModule, MdGridListModule, MdButtonModule, MdCardModule } from '@angular/material';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryService } from './services/inmemory.service';
+
 import { AppComponent } from './app.component';
 import { HolopComponent } from './holop/holop.component';
 import { ListComponent } from './list/list.component';
@@ -22,6 +25,7 @@ import { HolopService } from './services/holop.service';
     BrowserModule,
     FormsModule,
     HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryService),
     //Material Design modules below
     MdInputModule,
     MdChipsModule,
