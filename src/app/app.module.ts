@@ -6,10 +6,12 @@ import { MdInputModule, MdChipsModule, MdGridListModule, MdButtonModule, MdCardM
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
+import { HolopComponent } from './holop/holop.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HolopComponent
   ],
   imports: [
     BrowserModule,
